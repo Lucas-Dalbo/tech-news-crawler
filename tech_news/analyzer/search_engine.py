@@ -47,3 +47,8 @@ def search_by_tag(tag):
 # Requisito 9
 def search_by_category(category):
     """Seu código deve vir aqui"""
+    result = search_news(
+        {"category": {"$regex": f"^{category}$", "$options": "i"}}
+    )
+    news_list = news_tuplator(result)
+    return news_list
