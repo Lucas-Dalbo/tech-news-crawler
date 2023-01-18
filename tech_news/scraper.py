@@ -2,6 +2,7 @@ import requests
 import time
 from parsel import Selector
 from bs4 import BeautifulSoup
+from tech_news.database import create_news
 
 
 # Requisito 1
@@ -61,7 +62,7 @@ def scrape_news(html_content):
     tags = s.css("a[rel='tag']::text").getall()
     category = s.css(".entry-details span.label::text").get()
 
-    noticia = {
+    news = {
         "url": url,
         "title": title,
         "timestamp": timestamp,
@@ -71,9 +72,40 @@ def scrape_news(html_content):
         "tags": tags,
         "category": category,
     }
-    return noticia
+    return news
 
 
 # Requisito 5
 def get_tech_news(amount):
     """Seu código deve vir aqui"""
+    BASE_URL = "https://blog.betrybe.com"
+    page = fetch(BASE_URL)
+
+    total_pages = amount // 12
+    lp_quant_links = amount % 12
+
+    news_links = []
+    page_numb = 1
+    while page_numb <= total_pages:
+        this_page_links = scrape_updates(page)
+        news_links.extend(this_page_links)
+
+        if amount > page_numb * 12:
+            next_page = scrape_next_page_link(page)
+            print(next_page)
+            page = fetch(next_page)
+
+        page_numb += 1
+
+    if lp_quant_links > 0:
+        last_page_links = scrape_updates(page)
+        news_links.extend(last_page_links[:lp_quant_links])
+
+    news_list = []
+    for link in news_links:
+        news_page = fetch(link)
+        news_data = scrape_news(news_page)
+        news_list.append(news_data)
+
+    create_news(news_list)
+    return news_list
