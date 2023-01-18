@@ -23,6 +23,8 @@ def top_5_categories():
     """Seu código deve vir aqui"""
     results = find_news()
     categories = [news["category"] for news in results]
+    categories.sort()
     counted = Counter(categories)
+    top_categories = [c[0] for c in counted.most_common()]
 
-    return counted
+    return top_categories[:5]
