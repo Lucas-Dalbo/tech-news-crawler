@@ -1,4 +1,4 @@
-import operator
+from collections import Counter
 from tech_news.analyzer.search_engine import news_tuplator
 from tech_news.database import find_news
 
@@ -21,3 +21,8 @@ def top_5_news():
 # Requisito 11
 def top_5_categories():
     """Seu código deve vir aqui"""
+    # results = find_news()
+    # categories = [news["category"] for news in results]
+    # counted = Counter(categories)
+
+    # return 
