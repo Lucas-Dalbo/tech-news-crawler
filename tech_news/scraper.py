@@ -92,7 +92,6 @@ def get_tech_news(amount):
 
         if amount > page_numb * 12:
             next_page = scrape_next_page_link(page)
-            print(next_page)
             page = fetch(next_page)
 
         page_numb += 1
