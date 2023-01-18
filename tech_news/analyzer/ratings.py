@@ -21,8 +21,8 @@ def top_5_news():
 # Requisito 11
 def top_5_categories():
     """Seu código deve vir aqui"""
-    # results = find_news()
-    # categories = [news["category"] for news in results]
-    # counted = Counter(categories)
+    results = find_news()
+    categories = [news["category"] for news in results]
+    counted = Counter(categories)
 
-    # return 
+    return counted
