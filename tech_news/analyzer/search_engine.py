@@ -37,6 +37,11 @@ def search_by_date(date):
 # Requisito 8
 def search_by_tag(tag):
     """Seu código deve vir aqui"""
+    result = search_news(
+        {"tags": {"$regex": f"^{tag}$", "$options": "i"}}
+    )
+    news_list = news_tuplator(result)
+    return news_list
 
 
 # Requisito 9
