@@ -1,6 +1,8 @@
 # Requisito 12
 import sys
 from tech_news.analyzer.ratings import top_5_categories, top_5_news
+from tech_news.scraper import get_tech_news
+from tech_news.analyzer.search_engine import search_by_title,search_by_date,search_by_tag,search_by_category
 
 
 def analyzer_menu():
@@ -36,23 +38,32 @@ def analyzer_menu():
 
 
 def get_tech_news_caller():
-    input("Digite quantas notícias serão buscadas:")
+    amount = input("Digite quantas notícias serão buscadas:")
+    get_tech_news(amount)
 
 
 def search_by_title_caller():
-    input("Digite o título:")
+    title = input("Digite o título:")
+    result = search_by_title(title)
+    print(result)
 
 
 def search_by_date_caller():
-    input("Digite a data no formato aaaa-mm-dd:")
+    date = input("Digite a data no formato aaaa-mm-dd:")
+    result = search_by_date(date)
+    print(result)
 
 
 def search_by_tag_caller():
-    input("Digite a tag:")
+    tag = input("Digite a tag:")
+    result = search_by_tag(tag)
+    print(result)
 
 
 def search_by_categoty_caller():
-    input("Digite a categoria:")
+    category = input("Digite a categoria:")
+    result = search_by_category(category)
+    print(result)
 
 
 def close_app():
