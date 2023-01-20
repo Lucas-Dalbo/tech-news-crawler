@@ -2,7 +2,12 @@
 import sys
 from tech_news.analyzer.ratings import top_5_categories, top_5_news
 from tech_news.scraper import get_tech_news
-from tech_news.analyzer.search_engine import search_by_title,search_by_date,search_by_tag,search_by_category
+from tech_news.analyzer.search_engine import (
+    search_by_title,
+    search_by_date,
+    search_by_tag,
+    search_by_category
+)
 
 
 def analyzer_menu():
