@@ -58,5 +58,5 @@ O site utilizado para a raspagem é o [Blog da Trybe](https://blog.betrybe.com),
   ```
 5. No terminal, execute menu.py:
   ```bash
-    python3 -m tech_news/menu.py
+    python3 tech_news/menu.py
   ```
