@@ -18,8 +18,8 @@ def analyzer_menu():
         "2": search_by_date_caller,
         "3": search_by_tag_caller,
         "4": search_by_categoty_caller,
-        "5": top_5_news,
-        "6": top_5_categories,
+        "5": top_5_news_caller,
+        "6": top_5_categories_caller,
         "7": close_app,
     }
 
@@ -44,7 +44,7 @@ def analyzer_menu():
 
 def get_tech_news_caller():
     amount = input("Digite quantas notícias serão buscadas:")
-    get_tech_news(amount)
+    get_tech_news(int(amount))
 
 
 def search_by_title_caller():
@@ -68,6 +68,16 @@ def search_by_tag_caller():
 def search_by_categoty_caller():
     category = input("Digite a categoria:")
     result = search_by_category(category)
+    print(result)
+
+
+def top_5_news_caller():
+    result = top_5_news()
+    print(result)
+
+
+def top_5_categories_caller():
+    result = top_5_categories()
     print(result)
 
 
