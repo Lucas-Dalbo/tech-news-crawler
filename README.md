@@ -1,5 +1,3 @@
-[Read it in English!](./README-Eng.md)
-
 # Projeto: Tech News Scraping
 Este projeto foi desenvolvido enquanto estudante da Trybe no módulo de Ciências da Computação.
 
