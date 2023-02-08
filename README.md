@@ -46,7 +46,7 @@ O site utilizado para a raspagem é o [Blog da Trybe](https://blog.betrybe.com),
 1. Clone o repositório e abra a pasta raiz.
 2. Ative o ambiente virtual do python pelo terminal:
   ```bash
-    python3 -m venv .venv & source .venv/bin/activate
+    python3 -m venv .venv && source .venv/bin/activate
   ```
 3. Instale as dependências pelo terminal:
   ```bash
