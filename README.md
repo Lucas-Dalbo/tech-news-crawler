@@ -1,4 +1,4 @@
-# Projeto: Tech News Scraping
+# Projeto: Tech News Crawler
 Este projeto foi desenvolvido enquanto estudante da Trybe no módulo de Ciências da Computação.
 
 ---
