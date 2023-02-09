@@ -16,7 +16,7 @@ O site utilizado para a raspagem é o [Blog da Trybe](https://blog.betrybe.com),
  - Como armazenar os dados obtidos em um banco de dados.
 
 ---
-## Requisitos
+## Código desenvolvido
   01. Função `fetch`, responsável por extrair o conteúdo HTML de uma página.
   02. Função `scrape_updates`, que realiza a raspagem para extrair as URL's das notícias.
   03. Função `scrape_next_page_link`, faz a raspagem para buscar a URL da próxima pagina.
